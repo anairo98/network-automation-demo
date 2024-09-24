@@ -1,17 +1,14 @@
 ---
 
 - name: Automate Cisco ACI
-  hosts: aci
+  hosts: localhost
+  connection: local
   gather_facts: false
-  pre_tasks:
-    - name: Ensure ACI login data is provided via environment variables
-      ansible.builtin.assert:
-        that:
-          - lookup('env', 'ACI_HOST') is defined
-          - lookup('env', 'ACI_USERNAME') is defined
-          - lookup('env', 'ACI_PASSWORD') is defined
-          - lookup('env', 'ACI_VALIDATE_CERTS') is defined
-        quiet: true
-        fail_msg: "Provide login credentials, for example: 'export ACI_HOST=aci-api-endpoint'"
+  module_defaults:
+    group/cisco.aci.all:
+      host: "sandboxapicdc.cisco.com"
+      username: "admin"
+      password: "!v3G@!4@Y"
+      validate_certs: false
   roles:
     - aci-automation
