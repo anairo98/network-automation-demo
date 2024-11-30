@@ -10,5 +10,10 @@
       username: "admin"
       password: "!v3G@!4@Y"
       validate_certs: false
+  pre_tasks:
+    - debug:
+        msg:
+          - "{{ inventory_dir }}"
+          - "{{ inventory_file }}"
   roles:
     - aci-automation
