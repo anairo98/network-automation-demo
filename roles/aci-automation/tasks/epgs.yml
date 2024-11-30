@@ -1,7 +1,7 @@
 ---
 - name: Add all Endpoint groups
   cisco.aci.aci_epg:
-    tenant: demo-tenant-tg
+    tenant: "{{ tenant_name }}"
     ap: workshop
     epg: "{{ item.epg_name }}"
     description: "{{ item.epg_description }}"

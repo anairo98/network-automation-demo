@@ -1,5 +1,5 @@
 ---
 - name: Create tenant
   cisco.aci.aci_tenant:
-    name: demo-tenant-tg
+    name: "{{ tenant_name }}"
     state: present

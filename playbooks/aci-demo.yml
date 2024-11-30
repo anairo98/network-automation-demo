@@ -1,7 +1,7 @@
 ---
 
 - name: Automate Cisco ACI
-  hosts: localhost
+  hosts: aci
   connection: local
   gather_facts: false
   module_defaults:

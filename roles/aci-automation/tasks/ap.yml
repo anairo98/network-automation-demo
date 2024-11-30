@@ -1,7 +1,7 @@
 ---
 - name: Add a new application profile
   cisco.aci.aci_ap:
-    tenant: demo-tenant-tg
+    tenant: "{{ tenant_name }}"
     ap: workshop
     description: Workshop AP
     monitoring_policy: default
