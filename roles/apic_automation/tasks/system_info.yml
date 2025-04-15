@@ -1,0 +1,9 @@
+---
+- name: Query all controllers system information
+  cisco.aci.aci_system:
+    state: query
+  register: apic_system_info_result
+
+- name: Output APIC system information
+  ansible.builtin.debug:
+    var: apic_system_info_result
