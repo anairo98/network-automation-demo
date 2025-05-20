@@ -1,0 +1,20 @@
+---
+- name: Gather minimal facts for NX-OS
+  cisco.nxos.nxos_facts:
+    gather_subset:
+      - '!all'
+      - min
+  register: nxos_facts
+
+- name: Output NX-OS facts
+  ansible.builtin.debug:
+    var: nxos_facts
+
+- name: Run show version on remote devices
+  cisco.nxos.nxos_command:
+    commands: show version | json
+  register: nxos_show_version_json_output
+
+- name: Output NX-OS facts
+  ansible.builtin.debug:
+    var: nxos_show_version_json_output.stdout.0

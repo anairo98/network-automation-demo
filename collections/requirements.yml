@@ -2,3 +2,4 @@
 
 collections:
   - cisco.aci
+  - cisco.nxos

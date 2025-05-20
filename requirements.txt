@@ -1,0 +1,4 @@
+ansible-pylibssh
+# Not really necessary for newer NX-OS versions, but can
+# be used as a fallback if the above is not working/is not installed
+paramiko

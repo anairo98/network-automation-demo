@@ -1,0 +1,7 @@
+---
+
+- name: NX-OS Test Playbook
+  hosts: nxos
+  gather_facts: false
+  roles:
+    - nxos_automation
